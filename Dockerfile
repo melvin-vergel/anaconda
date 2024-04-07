@@ -1,6 +1,6 @@
 FROM continuumio/anaconda3
 
-ADD ./srv/anaconda/conf/requirements.txt /
+COPY ./srv/anaconda/conf/requirements.txt /requirements.txt
 
 RUN apt-get -y install gcc && pip install --upgrade setuptools && pip install -r requirements.txt
 RUN mkdir -p /root/.jupyter
